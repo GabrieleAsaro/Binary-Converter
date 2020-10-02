@@ -1,23 +1,24 @@
 #include <stdio.h>
 
-int main() {
-    int decimalNum, rest, i = 0;
-    char* result = "";
+int main()
+{
+	char str[] = "mrugen";
+	int len = 0;
 
-    puts("Decimal Number: \n");
-    scanf("%d", &decimalNum);
+	while(str[len] != '\0')
+	{
+		len++;
+	}
+	printf("The length of string is %d\n", len);
 
-    while (decimalNum > 0) {
-        rest = decimalNum % 2;
-        decimalNum /= 2;
-        *(result + i) = '0' + rest;
-        i++;
-    }
+	for (int i = 0; i < (len) / 2; i++)
+	{
+		char temp = str[i];
+		str[i] = str[len-1-i];
+		str[len-1-i] = temp;	
+	}
 
-    for(int j = i-1; j >= 0; j--){
-        putchar(*(result + j));
-    }
+	printf("Reversed string: %s\n", str);
 
-    return 0;
-
+	return 0;
 }
