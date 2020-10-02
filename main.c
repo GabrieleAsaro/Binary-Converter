@@ -2,23 +2,26 @@
 
 int main()
 {
-	char str[] = "mrugen";
-	int len = 0;
+    int n;
+    int remainder;
+    int i = 0;
+    int a[10];
 
-	while(str[len] != '\0')
-	{
-		len++;
-	}
-	printf("The length of string is %d\n", len);
+    printf("Enter a number: ");
+    scanf("%d", &n);
 
-	for (int i = 0; i < (len) / 2; i++)
-	{
-		char temp = str[i];
-		str[i] = str[len-1-i];
-		str[len-1-i] = temp;	
-	}
+    while (n)
+    {
+        remainder = n % 2;
+        n = n / 2;
+        a[i] = remainder;
+        i++;
+    }
 
-	printf("Reversed string: %s\n", str);
+    for (int j = i - 1; j >= 0; j--)
+    {
+        printf("%d", a[j]);
+    }
 
-	return 0;
+    return 0;
 }
