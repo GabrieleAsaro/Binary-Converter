@@ -1,23 +1,27 @@
 #include <stdio.h>
 
-int main() {
-    int decimalNum, rest, i = 0;
-    char* result = "";
+int main()
+{
+    int n;
+    int remainder;
+    int i = 0;
+    int a[10];
 
-    puts("Decimal Number: \n");
-    scanf("%d", &decimalNum);
+    printf("Enter a number: ");
+    scanf("%d", &n);
 
-    while (decimalNum > 0) {
-        rest = decimalNum % 2;
-        decimalNum /= 2;
-        *(result + i) = '0' + rest;
+    while (n)
+    {
+        remainder = n % 2;
+        n = n / 2;
+        a[i] = remainder;
         i++;
     }
 
-    for(int j = i-1; j >= 0; j--){
-        putchar(*(result + j));
+    for (int j = i - 1; j >= 0; j--)
+    {
+        printf("%d", a[j]);
     }
 
     return 0;
-
 }
